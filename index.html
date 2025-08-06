@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Logo.png"/>
+    <title>DeepScalp | AI-Powered Trading Signals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+        }
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        .card-bg {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .signal-buy {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 3px solid #10b981;
+        }
+        .signal-sell {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 3px solid #ef4444;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <div class="gradient-bg p-2 rounded-lg">
+                <i class="fas fa-bolt text-white"></i>
+            </div>
+            <span class="text-xl font-bold">DeepScalp</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#features" class="hover:text-indigo-400 transition">Features</a>
+            <a href="#pricing" class="hover:text-indigo-400 transition">Pricing</a>
+            <a href="#testimonials" class="hover:text-indigo-400 transition">Testimonials</a>
+            <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="hidden md:block hover:text-indigo-400 transition"></a>
+            <a href="#pricing" class="px-4 py-2 gradient-bg rounded-lg font-medium hover:opacity-90 transition">Get Started</a>
+            <button class="md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-20 md:py-32">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Trade Smarter with <span class="gradient-text">AI-Powered</span> Signals
+                </h1>
+                <p class="text-lg text-gray-400 mb-8 max-w-lg">
+                    DeepScalp delivers real-time trading signals powered by advanced machine learning algorithms. Maximize your profits in crypto and stock markets with our premium indicators.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#pricing" class="px-8 py-4 gradient-bg rounded-lg font-bold text-center hover:opacity-90 transition">
+                        BUY NOW
+                    </a>
+                    <a href="#features" class="px-8 py-4 bg-transparent border border-indigo-500 rounded-lg font-bold text-center hover:bg-indigo-900/30 transition">
+                        Learn More
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center space-x-4">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full border-2 border-gray-800" alt="User">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-gray-800" alt="User">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-10 h-10 rounded-full border-2 border-gray-800" alt="User">
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-400">Trusted by <span class="font-bold text-white">5,000+</span> traders</p>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <span class="text-sm">4.9/5 (1,200+ reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 card-bg rounded-xl p-4 shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="text-sm text-gray-400">Live Signals Dashboard</div>
+                    <div class="text-sm gradient-text font-medium">BTC/USDT</div>
+                </div>
+                
+                <!-- Mini chart placeholder -->
+                <div class="h-48 bg-gray-800/50 rounded-lg mb-4 flex items-center justify-center">
+                    <div class="text-gray-500">Live Price Chart</div>
+                </div>
+                
+                <!-- Signals list -->
+                <div class="space-y-2">
+                    <div class="signal-buy p-3 rounded-lg flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">BTC/USDT</div>
+                            <div class="text-sm text-gray-400">Strong Buy Signal</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold">$42,856.23</div>
+                            <div class="text-sm text-green-400">+2.4% in 4h</div>
+                        </div>
+                    </div>
+                    <div class="signal-sell p-3 rounded-lg flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">ETH/USDT</div>
+                            <div class="text-sm text-gray-400">Sell Signal</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold">$2,345.67</div>
+                            <div class="text-sm text-red-400">-1.2% in 1h</div>
+                        </div>
+                    </div>
+                    <div class="signal-buy p-3 rounded-lg flex justify-between items-center">
+                        <div>
+                            <div class="font-medium">SOL/USDT</div>
+                            <div class="text-sm text-gray-400">Buy Signal</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-bold">$98.76</div>
+                            <div class="text-sm text-green-400">+5.7% in 12h</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-center text-sm text-gray-500">
+                    <i class="fas fa-lock mr-1"></i> Signals update every 15 seconds
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Advanced Trading <span class="gradient-text">Intelligence</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Our AI analyzes market data 24/7 to deliver high-probability trading opportunities</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="card-bg p-6 rounded-xl">
+                <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-brain text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">AI-Powered Alerts</h3>
+                <p class="text-gray-400">Machine learning models detect patterns and anomalies with 92% historical accuracy.</p>
+            </div>
+            <div class="card-bg p-6 rounded-xl">
+                <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-bolt text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Real-Time Signals</h3>
+                <p class="text-gray-400">Instant notifications for crypto and stock opportunities with precise entry/exit points.</p>
+            </div>
+            <div class="card-bg p-6 rounded-xl">
+                <div class="gradient-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                    <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Premium Strategies</h3>
+                <p class="text-gray-400">Access institutional-grade trading strategies previously only available to hedge funds.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Preview -->
+    <section class="container mx-auto px-6 py-20">
+        <div class="card-bg rounded-2xl overflow-hidden">
+            <div class="p-4 border-b border-gray-800 flex justify-between items-center">
+                <div class="flex space-x-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="text-sm text-gray-400">DeepScalp Pro Dashboard</div>
+                <div class="text-sm gradient-text font-medium">Live Mode</div>
+            </div>
+            <div class="p-6">
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-2/3 mb-8 lg:mb-0 lg:pr-8">
+                        <!-- Main chart placeholder -->
+                        <div class="h-80 bg-gray-800/50 rounded-lg flex items-center justify-center">
+                            <div class="text-gray-500">Interactive Price Chart with Indicators</div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/3">
+                        <div class="mb-6">
+                            <h3 class="text-xl font-bold mb-4">Active Signals</h3>
+                            <div class="space-y-3">
+                                <div class="signal-buy p-3 rounded-lg">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="font-medium">BTC/USDT</span>
+                                        <span class="text-xs px-2 py-1 bg-green-900/50 text-green-400 rounded">STRONG BUY</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm text-gray-400">
+                                        <span>Entry: $42,120 - $42,500</span>
+                                        <span>TP: $44,800</span>
+                                    </div>
+                                </div>
+                                <div class="signal-sell p-3 rounded-lg">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <span class="font-medium">ETH/USDT</span>
+                                        <span class="text-xs px-2 py-1 bg-red-900/50 text-red-400 rounded">SELL</span>
+                                    </div>
+                                    <div class="flex justify-between text-sm text-gray-400">
+                                        <span>Entry: $2,380 - $2,400</span>
+                                        <span>TP: $2,280</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-4">Performance Metrics</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="card-bg p-3 rounded-lg">
+                                    <div class="text-gray-400 text-sm">Win Rate</div>
+                                    <div class="text-2xl font-bold gradient-text">78.6%</div>
+                                </div>
+                                <div class="card-bg p-3 rounded-lg">
+                                    <div class="text-gray-400 text-sm">Avg. Profit</div>
+                                    <div class="text-2xl font-bold gradient-text">+3.2%</div>
+                                </div>
+                                <div class="card-bg p-3 rounded-lg">
+                                    <div class="text-gray-400 text-sm">Signals/Month</div>
+                                    <div class="text-2xl font-bold">42</div>
+                                </div>
+                                <div class="card-bg p-3 rounded-lg">
+                                    <div class="text-gray-400 text-sm">Risk Level</div>
+                                    <div class="text-2xl font-bold">Medium</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, <span class="gradient-text">Transparent</span> Pricing</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Choose the plan that fits your trading style.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="card-bg p-8 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">Starter</h3>
+                <p class="text-gray-400 mb-6">For beginners testing the waters</p>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">$11.99</span>
+                    <span class="text-gray-400">/month</span>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>3 Crypto Pairs</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>Basic Signals</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>Email Alerts</span>
+                    </li>
+                    <li class="flex items-center text-gray-500">
+                        <i class="fas fa-times text-red-400 mr-2"></i>
+                        <span>No Stock Signals</span>
+                    </li>
+                    <li class="flex items-center text-gray-500">
+                        <i class="fas fa-times text-red-400 mr-2"></i>
+                        <span>No Premium Strategies</span>
+                    </li>
+                </ul>
+                <a href="#" class="block w-full py-3 text-center border border-indigo-500 rounded-lg font-medium hover:bg-indigo-900/30 transition">BUY NOW</a>
+            </div>
+            
+            <div class="card-bg p-8 rounded-xl border-2 border-indigo-500 relative">
+                <div class="absolute top-0 right-0 gradient-bg text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">MOST POPULAR</div>
+                <h3 class="text-xl font-bold mb-2">Pro Trader</h3>
+                <p class="text-gray-400 mb-6">For serious traders maximizing profits</p>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">$18.99</span>
+                    <span class="text-gray-400">/month</span>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>15 Crypto Pairs</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>Advanced Signals</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>Push Notifications</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>5 Stock Signals</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>Premium Strategies</span>
+                    </li>
+                </ul>
+                <a href="#" class="block w-full py-3 text-center gradient-bg rounded-lg font-bold hover:opacity-90 transition">BUY NOW</a>
+            </div>
+            
+            <div class="card-bg p-8 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">Institutional</h3>
+                <p class="text-gray-400 mb-6">For professional traders & funds</p>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">$49.99</span>
+                    <span class="text-gray-400">/month</span>
+                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>All Crypto Pairs</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>Institutional Signals</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>API Access</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>All Stock Signals</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check text-green-400 mr-2"></i>
+                        <span>VIP Support</span>
+                    </li>
+                </ul>
+                <a href="#" class="block w-full py-3 text-center border border-indigo-500 rounded-lg font-medium hover:bg-indigo-900/30 transition">BUY NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Trusted by <span class="gradient-text">Thousands</span> of Traders</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Don't just take our word for it - hear from our community</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="card-bg p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full mr-4" alt="User">
+                    <div>
+                        <h4 class="font-bold">Michael T.</h4>
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-400">"DeepScalp's AI signals have completely transformed my trading. My portfolio is up 47% in 3 months using their BTC and ETH strategies."</p>
+            </div>
+            
+            <div class="card-bg p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full mr-4" alt="User">
+                    <div>
+                        <h4 class="font-bold">Sarah K.</h4>
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-400">"As a full-time trader, I rely on DeepScalp for high-probability setups. The institutional strategies are worth every penny."</p>
+            </div>
+            
+            <div class="card-bg p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full mr-4" alt="User">
+                    <div>
+                        <h4 class="font-bold">David R.</h4>
+                        <div class="flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-400">"The real-time alerts are incredibly accurate. I've tried many signal services but none compare to DeepScalp's AI technology."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container mx-auto px-6 py-20">
+        <div class="gradient-bg rounded-2xl p-8 md:p-12 text-center">
+            <h2 class="text-2xl md:text-4xl font-bold mb-6">Ready to Transform Your Trading?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">Join thousands of traders using DeepScalp to gain an edge in the markets. Start your day Now</p>
+            <a href="#pricing" class="inline-block px-8 py-4 bg-white text-gray-900 rounded-lg font-bold hover:bg-gray-200 transition">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="container mx-auto px-6 py-12 border-t border-gray-800">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="gradient-bg p-2 rounded-lg">
+                        <i class="fas fa-bolt text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold">DeepScalp</span>
+                </div>
+                <p class="text-gray-400 mb-4">AI-powered trading signals for crypto and stock markets.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Product</h4>
+                <ul class="space-y-2">
+                    <li><a href="#features" class="text-gray-400 hover:text-white transition">Features</a></li>
+                    <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">API</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Integrations</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Resources</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Documentation</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Tutorials</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Contact</h4>
+                <ul class="space-y-2">
+                    <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> support@deepscalp.com</li>
+                    <li class="text-gray-400"><i class="fas fa-comment mr-2"></i> Live Chat</li>
+                    <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">© 2023 DeepScalp. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition">Terms</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Privacy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition">Risk Disclosure</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
