@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="LOGO.png" />
+    <title>FOR STARTER | DeepScalp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        }
+        .plan-card {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 0.5rem;
+        }
+        .media-container {
+            aspect-ratio: 16/9;
+            background-color: #1e293b;
+        }
+        .folder-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: #1e293b;
+            border-radius: 0.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .folder-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+        }
+        .folder-item:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        .folder-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #6366f1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="bg-gray-900/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="gradient-bg p-2 rounded-lg">
+                    <i class="fas fa-bolt text-white"></i>
+                </div>
+                <span class="text-xl font-bold">DeepScalp</span>
+            </div>
+            <nav class="flex items-center space-x-4">
+                <a href="http://127.0.0.1:5500/index.html#pricing" class="hover:text-indigo-400 transition">Plans</a>
+                <a href="/index.html" class="hover:text-indigo-400 transition">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto">
+            <!-- Plan Header -->
+            <section class="text-center mb-16">
+                <span class="inline-block px-4 py-1 gradient-bg rounded-full text-sm font-bold mb-3">FOR STARTER</span>
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">Begin Your Trading Journey</h1>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Perfect for new traders wanting to test our AI signals with minimal risk
+                </p>
+            </section>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Media and Pricing Column -->
+                <section class="plan-card p-8">
+                    <!-- Media Gallery -->
+                    <div class="mb-8">
+                        <!-- Main Media Display -->
+                        <div class="media-container rounded-lg overflow-hidden mb-4 flex items-center justify-center relative">
+                            <img src="./images/pic1.jpg" 
+                                 alt="DeepScalp Dashboard" 
+                                 id="main-media"
+                                 class="w-full h-full object-contain">
+                        </div>
+                        
+                        <!-- Folder View -->
+                        <div class="folder-view mb-4">
+                            <div class="folder-item" onclick="showMedia('image', './images/pic1.jpg')">
+                                <i class="far fa-image folder-icon  hover:text-white"></i>
+                                <span class="text-xs text-center truncate w-full">Picture</span>
+                            </div>
+                            <div class="folder-item" onclick="showMedia('image', './images/pic2.jpg')">
+                                <i class="far fa-image folder-icon hover:text-white"></i>
+                                <span class="text-xs text-center truncate w-full">Picture</span>
+                            </div>
+                            <div class="folder-item" onclick="showMedia('video', './videos/vid1.MP4')">
+                                <i class="fas fa-video folder-icon hover:text-white"></i>
+                                <span class="text-xs text-center truncate w-full">Video</span>
+                            </div>
+                            <!-- Add more files as needed -->
+                        </div>
+                    </div>
+
+                    <!-- Pricing and Payment Section -->
+                    <div class="flex items-end mb-6">
+                        <span class="text-4xl font-bold">$19.99</span>
+                    </div>
+
+                    <!-- Payment Buttons -->
+                    <div class="space-y-3 mb-8">
+                        <button onclick="initPaddleCheckout()" 
+                                class="w-full py-3 bg-blue-900/20 border border-blue-700 rounded-lg flex items-center justify-center font-medium hover:bg-blue-900/30 transition">
+                            <i class="fab fa-cc-visa mr-2"></i>
+                            <i class="fab fa-cc-mastercard mr-3"></i>
+                            Pay with Card
+                        </button>
+                        <button onclick="showCryptoModal()" 
+                                class="w-full py-3 bg-orange-900/20 border border-orange-700 rounded-lg flex items-center justify-center font-medium hover:bg-orange-900/30 transition">
+                            <i class="fab fa-bitcoin mr-2"></i>
+                            Pay with Crypto
+                        </button>
+                        
+                    </div>
+                    <!-- Features List -->
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>All Crypto Pairs and All Stock Signals</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Basic AI Signals </span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-400 mr-3"></i>
+                            <span>Email Alerts</span>
+                        </li>
+                        <li class="flex items-center text-gray-500">
+                            <i class="fas fa-times text-red-400 mr-3"></i>
+                            <span></span>
+                        </li>
+                        <li class="flex items-center text-gray-500">
+                            <i class="fas fa-times text-red-400 mr-3"></i>
+                            <span>No Premium Strategies</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Plan Details Column -->
+                <section>
+                    <!-- Features Highlight -->
+                    <div class="plan-card p-6 mb-6 border-l-4 border-green-500 bg-green-900/10">
+                        <h3 class="font-bold text-lg mb-3">🚀 Starter Includes:</h3>
+                        <ul class="list-disc list-inside space-y-2 pl-2">
+                            <li>Daily 5-10 high-probability crypto signals</li>
+                            <li>Basic support via email</li>
+                            <li>Beginner educational materials</li>
+                            <li>Web dashboard with basic analytics</li>
+                        </ul>
+                    </div>
+
+                    <!-- Crypto Payment Modal -->
+                    <div id="crypto-modal" class="hidden plan-card p-6 mb-6">
+                        <h3 class="font-bold text-lg mb-3">Pay with Cryptocurrency</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-400 mb-1">Select Coin</label>
+                                <select class="w-full px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
+                                    <option>Bitcoin (BTC)</option>
+                                    <option>Ethereum (ETH)</option>
+                                    <option>USDT (ERC-20)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400 mb-1">Wallet Address</label>
+                                <div class="flex items-center bg-gray-800 rounded-lg border border-gray-700 px-4 py-2">
+                                    <span class="truncate">0x71C7656EC7ab88b098defB751B7401B5f6d8976F</span>
+                                    <button onclick="copyWalletAddress()" class="ml-2 text-indigo-400 hover:text-indigo-300">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">Send exact amount to this address</p>
+                            </div>
+                            <button class="w-full py-2 bg-orange-900/20 border border-orange-700 rounded-lg font-medium hover:bg-orange-900/30">
+                                Confirm Payment
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Plan Comparison -->
+                    <div class="plan-card p-6 mb-6">
+                        <h3 class="text-xl font-bold mb-4">How Starter Compares</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+                                <span>Signal Frequency</span>
+                                <span class="font-bold">5-10/day</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+                                <span>Markets Covered</span>
+                                <span class="font-bold">All Crypto Pairs</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+                                <span>Win Rate</span>
+                                <span class="font-bold gradient-text">72-75%</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-2 border-b border-gray-800">
+                                <span>Support</span>
+                                <span class="font-bold">Email Only</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upgrade CTA -->
+                    <div class="plan-card p-6">
+                        <h3 class="font-bold text-lg mb-2">Need More?</h3>
+                        <p class="text-gray-400 mb-4">
+                            Upgrade to <span class="font-bold">PRO Trader</span> for 8-16 signals/day, stock coverage, and premium features.
+                        </p>
+                        <a href="http://127.0.0.1:5500/index.html#pricing" class="inline-block border border-indigo-500 px-6 py-2 rounded-lg font-medium hover:bg-indigo-900/30 transition">
+                            Compare Plans
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 backdrop-blur-sm border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© <span id="current-year"></span> DeepScalp. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="/Privacy.html" class="text-gray-400 hover:text-white">Privacy</a>
+                    <a href="/Terms.html" class="text-gray-400 hover:text-white">Terms</a>
+                    <a href="/Risk.html" class="text-gray-400 hover:text-white">Risk</a>
+                    <a href="/Contact.html" class="text-gray-400 hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Media Gallery Functionality
+        function showMedia(type, src) {
+            const container = document.querySelector('.media-container');
+            
+            // Clear container
+            container.innerHTML = '';
+            
+            if (type === 'video') {
+                const video = document.createElement('video');
+                video.controls = true;
+                video.autoplay = true;
+                video.className = 'w-full h-full';
+                
+                const source = document.createElement('source');
+                source.src = src;
+                source.type = 'video/mp4';
+                
+                video.appendChild(source);
+                video.appendChild(document.createTextNode('Your browser does not support videos'));
+                container.appendChild(video);
+            } else {
+                const img = new Image();
+                img.src = src;
+                img.alt = "DeepScalp Screenshot";
+                img.className = "w-full h-full object-contain";
+                img.onerror = () => {
+                    container.innerHTML = `
+                        <div class="text-center p-4 text-gray-400">
+                            <i class="fas fa-exclamation-triangle text-yellow-400 mb-2 text-2xl"></i>
+                            <p>Image not found</p>
+                        </div>
+                    `;
+                };
+                container.appendChild(img);
+            }
+        }
+
+        // Crypto Payment Modal
+        function showCryptoModal() {
+            document.getElementById('crypto-modal').classList.toggle('hidden');
+        }
+
+        function copyWalletAddress() {
+            navigator.clipboard.writeText('0x71C7656EC7ab88b098defB751B7401B5f6d8976F');
+            alert('Wallet address copied to clipboard!');
+        }
+
+        // Paddle Integration
+        function initPaddleCheckout() {
+            Paddle.Checkout.open({
+                product: 12345, // Your Starter plan product ID
+                email: 'customer@example.com',
+                successCallback: function(data) {
+                    window.location.href = '/thank-you';
+                }
+            });
+        }
+
+        // Initialize Paddle and verify files
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load Paddle SDK
+            const paddleScript = document.createElement('script');
+            paddleScript.src = 'https://cdn.paddle.com/paddle/paddle.js';
+            paddleScript.onload = function() {
+                Paddle.Setup({ vendor: YOUR_PADDLE_VENDOR_ID });
+            };
+            document.head.appendChild(paddleScript);
+
+            // Verify files exist (optional - for debugging)
+            const filesToCheck = [
+                './image/pic1.png',
+                './image/pic2.png',
+                './videos/vid1.MP4'
+            ];
+            
+            filesToCheck.forEach(file => {
+                fetch(file, { method: 'HEAD' })
+                    .then(res => {
+                        if (!res.ok) console.warn('File not found:', file);
+                    })
+                    .catch(() => console.warn('Error checking file:', file));
+            });
+        });
+    </script>
+</body>
+</html>
