@@ -293,6 +293,9 @@
                 <a href="https://discord.gg/d8Ps7epX" target="_blank" class="text-gray-400 hover:text-white">
                     <i class="fab fa-discord"></i>
                 </a>
+                <a href="https://www.tiktok.com/@deepscalp1" target="_blank" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-tiktok"></i>
+                </a>
             </div>
         </div>
     </footer>
@@ -348,26 +351,6 @@
             alert('Wallet address copied to clipboard!');
         }
 
-        // Paddle Integration
-        function initPaddleCheckout() {
-            Paddle.Checkout.open({
-                product: 12345, // Your Starter plan product ID
-                email: 'customer@example.com',
-                successCallback: function (data) {
-                    window.location.href = '/thank-you';
-                }
-            });
-        }
-
-        // Initialize Paddle and verify files
-        document.addEventListener('DOMContentLoaded', function () {
-            // Load Paddle SDK
-            const paddleScript = document.createElement('script');
-            paddleScript.src = 'https://cdn.paddle.com/paddle/paddle.js';
-            paddleScript.onload = function () {
-                Paddle.Setup({ vendor: YOUR_PADDLE_VENDOR_ID });
-            };
-            document.head.appendChild(paddleScript);
 
             // Verify files exist (optional - for debugging)
             const filesToCheck = [
@@ -383,7 +366,6 @@
                     })
                     .catch(() => console.warn('Error checking file:', file));
             });
-        });
     </script>
 </body>
 
