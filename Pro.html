@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="LOGO.png" />
-    <title>FOR STARTER | DeepScalp</title>
+    <title>FOR PRO TRADER | DeepScalp</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -226,7 +226,7 @@
                     <div class="plan-card p-6">
                         <h3 class="font-bold text-lg mb-2">Wanna Change?</h3>
                         <p class="text-gray-400 mb-4">
-                            Buy <span class="font-bold">FOR STARTER</span> for 5-10 signals/day, stock coverage,
+                            Buy <span class="font-bold">FOR BEGINNER</span> for 5-10 signals/day, stock coverage,
                             BUT no premium features.
                         </p>
                         <a href="/Starter.html"
@@ -294,6 +294,9 @@
                 <a href="https://discord.gg/d8Ps7epX" target="_blank" class="text-gray-400 hover:text-white">
                     <i class="fab fa-discord"></i>
                 </a>
+                <a href="https://www.tiktok.com/@deepscalp1" target="_blank" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-tiktok"></i>
+                </a>
             </div>
         </div>
     </footer>
@@ -349,26 +352,6 @@
             alert('Wallet address copied to clipboard!');
         }
 
-        // Paddle Integration
-        function initPaddleCheckout() {
-            Paddle.Checkout.open({
-                product: 12345, // Your Starter plan product ID
-                email: 'customer@example.com',
-                successCallback: function (data) {
-                    window.location.href = '/thank-you';
-                }
-            });
-        }
-
-        // Initialize Paddle and verify files
-        document.addEventListener('DOMContentLoaded', function () {
-            // Load Paddle SDK
-            const paddleScript = document.createElement('script');
-            paddleScript.src = 'https://cdn.paddle.com/paddle/paddle.js';
-            paddleScript.onload = function () {
-                Paddle.Setup({ vendor: YOUR_PADDLE_VENDOR_ID });
-            };
-            document.head.appendChild(paddleScript);
 
             // Verify files exist (optional - for debugging)
             const filesToCheck = [
@@ -384,7 +367,6 @@
                     })
                     .catch(() => console.warn('Error checking file:', file));
             });
-        });
     </script>
 </body>
 
